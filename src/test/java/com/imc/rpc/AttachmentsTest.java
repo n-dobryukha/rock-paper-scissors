@@ -15,7 +15,7 @@ public class AttachmentsTest {
     void testAttachFile() throws IOException {
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         try (InputStream is = classloader.getResourceAsStream("file.pdf")) {
-            Allure.addAttachment("file.pdf", "application/pdf", is, "pdf");
+            Allure.addAttachment("File-Файл.pdf", "application/pdf", is, "pdf");
         }
 
     }
