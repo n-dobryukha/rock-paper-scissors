@@ -12,10 +12,19 @@ import java.io.InputStream;
 public class AttachmentsTest {
 
     @Test
-    void testAttachFile() throws IOException {
+    void testAttachFileAsPdf() throws IOException {
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         try (InputStream is = classloader.getResourceAsStream("file.pdf")) {
-            Allure.addAttachment("File-Файл.pdf", "application/pdf", is, "pdf");
+            Allure.addAttachment("File-Файл-1.pdf", "application/pdf", is, "pdf");
+        }
+
+    }
+
+    @Test
+    void testAttachFileAsOctetStream() throws IOException {
+        ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+        try (InputStream is = classloader.getResourceAsStream("file.pdf")) {
+            Allure.addAttachment("File-Файл-2.pdf", "application/octet-stream", is, "pdf");
         }
 
     }
